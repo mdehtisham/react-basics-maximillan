@@ -8,7 +8,6 @@ import ExpenseForm from './ExpenseForm'
         //  setExpenseData({...receivedExpenseData, id: Math.random().toString()})
         const expenseData = {...receivedExpenseData, id: Math.random().toString()}
         props.onAddExpense(expenseData)
-         console.log('expense from parent', expenseData)
      }
     return <div className='new-expense'>  
         <ExpenseForm onSaveExpenseData={handleExpenseDataSave}></ExpenseForm>
