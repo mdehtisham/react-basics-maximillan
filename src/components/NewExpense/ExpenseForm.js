@@ -3,7 +3,7 @@ import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
     const [title, setTitle] = useState('')
-    const [amount, setAmount] = useState(null)
+    const [amount, setAmount] = useState('')
     const [date, setDate] = useState('')
 
     const titleChangeHandler = (e) => { 
