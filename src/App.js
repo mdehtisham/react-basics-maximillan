@@ -27,17 +27,25 @@ const dummyExpenses = [
 
 function App() {
   const [expenses, setExpenses] = useState(dummyExpenses)
+  const [allExpenses, setAllExpenses] = useState([...expenses])
 
   const addExpenseHandler = expense => {
     // setExpenses([...expenses, expense]) // We should not update the state like this, is the state is depending on the previous state
     // We should use function for this, like below
-    setExpenses(prevExpense => [...prevExpense, expense])
+    setExpenses(prevExpense => [expense, ...prevExpense])
+    setAllExpenses(prevExpense => [expense, ...prevExpense])
+  }
+  const handleDateChangeFilter = year => {
+    console.log('year', year)
+    console.log('all expenses', allExpenses)
+    console.log('expenses', expenses)
+    setExpenses(allExpenses.filter(e => e.date.getFullYear() == year))
   }
 
   return (
     <div className="App"> 
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <Expenses expenses={expenses}></Expenses>
+      <Expenses expenses={expenses} onDateChange={handleDateChangeFilter}></Expenses>
     </div>
   );
 }

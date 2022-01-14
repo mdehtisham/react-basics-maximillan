@@ -8,6 +8,7 @@ function Expenses(props){
 
     const hadleFilterChange = (selectedYear) => {
         setFilteredYear(selectedYear)
+        props.onDateChange(selectedYear)
     }
 
     return (
