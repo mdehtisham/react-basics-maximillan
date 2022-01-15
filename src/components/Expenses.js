@@ -11,10 +11,12 @@ function Expenses(props){
         props.onDateChange(selectedYear)
     }
 
+    const filteredExpenses = props.expenses.filter(e => e.date.getFullYear() == filteredYear)
+
     return (
         <div className="expenses">
             <ExpensesFilter onChangeFilter={hadleFilterChange}  selected={filteredYear}></ExpensesFilter>
-            {props.expenses.map(expense => {
+            {filteredExpenses.map(expense => {
                 return  <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} key={expense.id}></ExpenseItem>
             })}
         </div>
