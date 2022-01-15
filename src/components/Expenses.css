@@ -5,3 +5,8 @@
     width: 50rem;
     max-width: 95%;
   }
+
+.no-data-found{
+    color: white;
+    font-weight: bold;
+}

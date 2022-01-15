@@ -10,6 +10,7 @@ import ExpenseForm from './ExpenseForm'
         props.onAddExpense(expenseData)
      }
     return <div className='new-expense'>  
+        
         <ExpenseForm onSaveExpenseData={handleExpenseDataSave}></ExpenseForm>
     </div>
 }
